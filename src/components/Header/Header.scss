@@ -1,8 +1,9 @@
 @import "../../scss/mixins";
+@import "../../scss/variables";
 
 .header-top {
-  border:1px solid #e6e6e6;
-  background-color: #192f59;
+  border:1px solid rgb(230, 230, 230);
+  background-color: rgba(25, 47, 89, 0.5);
   
   .header-top_wrap {
     display: flex;
@@ -13,13 +14,13 @@
   .column{
     display: flex;
     align-items: center;
+    color: $color-text;
 
     .left_mail-info,
     .left_phone-info {
       display: flex;
       align-items: center;
       margin-right: 20px;
-      color: #96a2b8;
       .icon {
         margin-right: 6px;
       }
@@ -29,27 +30,126 @@
     @include list-unstyled;
      li {
       margin-left: 20px;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      padding-left: 12px;
-      padding-right: 12px;
       
-
       a {
-        color: #96a2b8;
+        color: $color-text;
         font-size: 15px;
         text-decoration: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
+        display: inline-block;
       }
     }
     .support {
-      background-color: #3db166;
+      background-color: $color-secondary;
       a{
         color: #fff;
         font-weight: 700;
       }
     }
-  }
-  
+  } 
+}
 
+.header{
+  position: sticky;
+  top: 0;
+  background-color: rgba(230, 230, 230, 0.7);
+  border-bottom: 1px solid #fff;
+  z-index: 999;
+  transition: all 0.3s ease;
+  
+  .header-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  // .header_left {
+  //   font-size: 20px
+  // }
+
+  .header_right .menu {
+    @include list-unstyled;
+    display: flex;
+    align-items: center;
+    
+    li {
+      position: relative;
+      
+      a {
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        color: $color-primary;
+        padding: 15px 18px;
+        display: inline-block;
+        position: relative;
+        transition: all 0.2s ease-in;
+        
+      }
+      
+      .dropdown {
+        @include list-unstyled;
+        background-color: #fff;
+        text-align: center;
+        box-shadow: 0px 2px 10px #000;
+        padding: 13px;
+        min-width: 260px;
+        width: 200%;
+        position: absolute;
+        top: 100%;
+        display: none;
+        
+        li {
+          a {
+            width: 100%;
+          }
+          a::after {
+            display: block;
+            background-color: $color-primary;
+            width: 0;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: "";
+            transition: all 0.2s ease-in;
+    
+          }
+        }
+      }
+      .dropdown.left {
+        right: 0;
+      }
+
+    }
+
+    li:hover  {
+      .dropdown{
+        display: block;
+        a:hover::after {
+          width: 100%;
+        }
+        a:focus::before {
+          width: 100%;
+        }
+      }
+      .menu-item{
+        background-color: $color-primary;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.sticky {
+  background-color: white;
+  box-shadow: 0px 2px 10px #000;
+}
+.padding {
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
   
 }

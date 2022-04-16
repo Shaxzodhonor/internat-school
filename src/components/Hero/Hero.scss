@@ -1,0 +1,56 @@
+@import "../../scss/variables";
+
+.hero {
+  position: relative;
+
+  .hero-wrap {
+    padding-top: 150px;
+    padding-bottom: 300px;
+  }
+  .vedio-wrap {
+    position: fixed;
+    z-index: -1;
+    top: 30%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .vedio-wrap::before{
+    display: block;
+    background-color: rgba(32, 8, 252, 0.1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    transition: all 0.2s ease-in;
+  }
+
+  .hero-content {
+    .suptitle {
+      font-size: 32px;
+      color: #fff;
+    }
+    h1{
+      margin: 0;
+      margin-bottom: 45px;
+      font-size: 50px;
+      color: #fff;
+      font-weight: 600;
+      margin-left: 20px;
+      text-align: center;
+      word-spacing: 14px;
+    }
+
+    button {
+      background-color: #fff;
+      color: $color-primary;
+      font-size: 22px;
+      font-weight: 500;
+      padding: 14px;
+      border: none;
+      border-left: 4px solid $color-secondary;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.admission {
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 80px;
+  .wrap {
+    .menu {
+      @include list-unstyled;
+      background-color: #fff;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transform: translateY(-70px);
+      box-shadow:0 2px 6px rgba(0, 0, 0, 0.459), 0 0 40px rgba(0, 0, 0, 0.1);
+
+      .item {
+        width: 25%;
+        a {
+          padding: 40px;
+          text-decoration: none;
+          display: flex;
+          
+          .icon {
+            font-size: 45px;
+            display: inline-block;
+          }
+          
+          .text {
+            margin-left: 18px;
+            .title {
+              margin-bottom: 10px;
+              color: $color-primary;
+              font-weight: 600;
+              font-size: 20px;
+            }
+            .subtitle {
+              color: $color-muted;
+            }
+          }
+        }
+     }
+    }
+
+  }
+  .content {
+    margin-top: -71px;
+    display: flex;
+    background-color: $color-primary;
+    .column {
+      width: 50%;
+    }
+    .text-wrap{
+      padding-top: 85px;
+      padding-bottom: 70px;
+      padding-left: 70px;
+      padding-right: 70px;
+      .title {
+        margin: 0;
+        color: #fff;
+        margin-bottom: 15px;
+        font-size: 29px;
+        font-weight: 600;
+      }
+      .subtitle {
+        font-size: 19px;
+        font-weight: 500;
+        color: $color-secondary;
+      }
+      p {
+        color: $color-text;
+        line-height: 1.7;
+        margin-bottom: 25px;
+      }
+      .btn {
+        color: #fff;
+        font-size: 20px;
+        background-color: $color-secondary;
+        border-radius: 1px;
+        border: none;
+        padding: 15px 20px;
+      }
+    }
+  }
+}

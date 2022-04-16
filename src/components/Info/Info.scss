@@ -1,0 +1,44 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+#info {
+  background-color: #fff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  .info-wrap {
+    background-color: $color-primary;
+    padding: 30px;
+  }
+  ul {
+    @include list-unstyled;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .item {
+      width: calc(25% - 25px);
+      box-sizing: border-box;
+      padding: 10px;
+
+      .icon {
+        color: $color-secondary;
+        width: 50px;
+        height: 50px;
+      }
+      h3 {
+        color: #fff;
+      }
+      .text {
+        font-weight: normal;
+        color: $color-text;
+        line-height: 1.6;
+      }
+      .btn {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: $color-secondary;
+      }
+    }
+  }
+}
